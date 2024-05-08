@@ -107,6 +107,7 @@ public class ImageAssetManager {
         return null;
       }
       bitmap = BitmapFactory.decodeByteArray(data, 0, data.length, opts);
+      bitmap = Utils.resizeBitmapIfNeeded(bitmap, asset.getWidth(), asset.getHeight());
       return putBitmap(id, bitmap);
     }
 
